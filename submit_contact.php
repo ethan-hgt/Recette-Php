@@ -19,15 +19,15 @@
     <?php
     // Vérification des paramètres email et message
     if (
-        !isset($_GET['email']) || !filter_var($_GET['email'], FILTER_VALIDATE_EMAIL) || 
-        !isset($_GET['message']) || empty($_GET['message'])
+        !isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) || 
+        !isset($_POST['message']) || empty($_POST['message'])
     ) {
         echo '<h1>Il faut un email et un message valides pour soumettre le formulaire.</h1>';
         return; // Arrêter l'exécution si les paramètres sont invalides
     }
 
-    $email = htmlspecialchars($_GET['email']);
-    $message = htmlspecialchars($_GET['message']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
     ?>
 
     <div class="card">
