@@ -25,9 +25,6 @@
         echo '<h1>Il faut un email et un message valides pour soumettre le formulaire.</h1>';
         return; // Arrêter l'exécution si les paramètres sont invalides
     }
-
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
     ?>
 
     <div class="card">
