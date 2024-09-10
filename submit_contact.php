@@ -26,8 +26,8 @@
         return; // Arrêter l'exécution si les paramètres sont invalides
     }
 
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+$email = htmlspecialchars($_POST['email']);
+$message = htmlspecialchars($_POST['message']);
     ?>
 
     <div class="card">
