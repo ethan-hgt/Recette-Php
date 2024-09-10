@@ -35,6 +35,7 @@
             <label for="screenshot" class="form-label">Votre capture d'écran</label>
             <input type="file" class="form-control" id="screenshot" name="screenshot" accept="image/*" />
         </div>
+
         
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
