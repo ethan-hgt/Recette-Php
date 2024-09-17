@@ -13,7 +13,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 'full_name' => $user['full_name']
             ];
             $_SESSION['user'] = $loggedUser;
-            break;
+
+            header('Location: index.php');
+            exit;  
         }
     }
 
