@@ -1,4 +1,8 @@
-<!-- header.php -->
+<?php
+session_start();
+$loggedUser = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Site de recettes</a>
@@ -13,6 +17,18 @@
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Contact</a>
         </li>
+      </ul>
+      
+      <ul class="navbar-nav ml-auto">
+        <?php if ($loggedUser): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Déconnexion (<?= $loggedUser['full_name']; ?>)</a>
+          </li>
+        <?php else: ?>
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Connexion</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>

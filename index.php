@@ -1,11 +1,9 @@
 <?php
-session_start();  // Pour gérer la session utilisateur
+session_start();
 
-// Inclure les fichiers nécessaires
 include_once('variables.php');
 include_once('functions.php');
 
-// Vérifier si un utilisateur est connecté
 $loggedUser = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 ?>
 
@@ -20,15 +18,11 @@ $loggedUser = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
-
-        <!-- Inclusion de l'entête du site -->
         <?php include_once('header.php'); ?>
         <h1>Site de recettes</h1>
 
-        <!-- Inclusion du formulaire de connexion -->
         <?php include_once('login.php'); ?>
 
-        <!-- Si l'utilisateur est connecté, on affiche les recettes -->
         <?php if ($loggedUser): ?>
             <h2>Bonjour <?= $loggedUser['email'] ?>, voici la liste des recettes :</h2>
             <?php foreach(getRecipes($recipes) as $recipe) : ?>
@@ -45,7 +39,6 @@ $loggedUser = isset($_SESSION['user']) ? $_SESSION['user'] : null;
         <?php endif; ?>
     </div>
 
-    <!-- Inclusion du bas de page du site -->
     <?php include_once('footer.php'); ?>
 </body>
 </html>
